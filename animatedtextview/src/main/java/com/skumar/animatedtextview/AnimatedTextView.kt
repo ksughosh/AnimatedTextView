@@ -4,7 +4,6 @@ import android.animation.*
 import android.content.Context
 import android.content.res.TypedArray
 import android.support.annotation.StringRes
-import android.support.v4.widget.AutoSizeableTextView
 import android.support.v7.widget.AppCompatTextView
 import android.util.AttributeSet
 import android.util.TypedValue
