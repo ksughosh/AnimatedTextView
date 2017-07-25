@@ -4,6 +4,7 @@ import android.animation.*
 import android.content.Context
 import android.content.res.TypedArray
 import android.support.annotation.StringRes
+import android.support.v7.widget.AppCompatTextView
 import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.View
@@ -42,15 +43,18 @@ open class AnimatedTextView: TextView {
 
     constructor(context: Context, attributeSet: AttributeSet): super(context, attributeSet) {
         attributeArray = context.theme.obtainStyledAttributes(attributeSet, R.styleable.AnimatedTextView, 0, 0)
+        init()
     }
     constructor(context: Context, attributeSet: AttributeSet, defStyleAttr: Int): super(context, attributeSet, defStyleAttr) {
         attributeArray = context.theme.obtainStyledAttributes(attributeSet, R.styleable.AnimatedTextView, 0, 0)
+        init()
     }
     constructor(context: Context, attributeSet: AttributeSet, defStyleAttr: Int = 0, defStyleRes: Int = 0): super(context, attributeSet, defStyleAttr, defStyleRes) {
         attributeArray = context.theme.obtainStyledAttributes(attributeSet, R.styleable.AnimatedTextView, 0, 0)
+        init()
     }
 
-    init {
+    fun init() {
         val attrArray = attributeArray
         if (attrArray != null) {
             animatedTextSize = attrArray.getDimensionPixelSize(R.styleable.AnimatedTextView_animatedTextSize, 0).toDouble()
@@ -62,7 +66,7 @@ open class AnimatedTextView: TextView {
         set
         get
 
-    var duration = 100L
+    var duration = 200L
         set
         get
 
