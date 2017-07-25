@@ -4,6 +4,7 @@ import android.animation.*
 import android.content.Context
 import android.content.res.TypedArray
 import android.support.annotation.StringRes
+import android.support.v4.widget.AutoSizeableTextView
 import android.support.v7.widget.AppCompatTextView
 import android.util.AttributeSet
 import android.util.TypedValue
@@ -32,7 +33,7 @@ import android.widget.TextView
  */
 
 @RemoteViews.RemoteView
-open class AnimatedTextView: TextView {
+open class AnimatedTextView: AppCompatTextView {
     private val  container: LinearLayout = LinearLayout(context)
 
     constructor(context: Context): super(context)
@@ -49,11 +50,9 @@ open class AnimatedTextView: TextView {
         attributeArray = context.theme.obtainStyledAttributes(attributeSet, R.styleable.AnimatedTextView, 0, 0)
         init()
     }
-    constructor(context: Context, attributeSet: AttributeSet, defStyleAttr: Int = 0, defStyleRes: Int = 0): super(context, attributeSet, defStyleAttr, defStyleRes) {
-        attributeArray = context.theme.obtainStyledAttributes(attributeSet, R.styleable.AnimatedTextView, 0, 0)
-        init()
-    }
 
+    // this is a function because the init {} block
+    // is called before the constructor
     fun init() {
         val attrArray = attributeArray
         if (attrArray != null) {
