@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="AnimatedTextView">
+        <attr name="animatedTextSize" format="dimension" value = "12sp"/>
+        <attr name="animator" format="reference" />
+        <attr name="duration" format="integer" />
+    </declare-styleable>
+</resources>
