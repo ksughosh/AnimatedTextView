@@ -14,9 +14,9 @@ import android.widget.RemoteViews
 import android.widget.TextView
 
 /**
- * @author s.kumar on 25/07/2017.
+ * @author s.kumar on 07/07/2017.
  *
- * Copyright (C)  25/07/2017 Sughosh Krishna Kumar
+ * Copyright (C)  07/07/2017 Sughosh Krishna Kumar
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
  * associated documentation files (the "Software"), to deal in the Software without restriction,
  * including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
@@ -173,9 +173,7 @@ open class AnimatedTextView: AppCompatTextView {
 
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
-        if (textToAnimate != null) {
-            text = textToAnimate ?: ""
-        }
+        text = textToAnimate ?: ""
         if (parent != null) {
             if (parent.asViewGroup()?.containsChild(container) ?: false) {
                 parent.asViewGroup()?.removeView(container)
